@@ -3,13 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-          <Text>Hello World!!</Text>
+    <View style={appStyles.container}>
+      <Text>Hello ETASTE</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const appStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
