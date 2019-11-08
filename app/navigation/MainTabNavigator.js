@@ -12,6 +12,7 @@ const config = Platform.select({
   default: {},
 });
 
+/* Home on Tabbar */
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
@@ -35,6 +36,7 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
+/* Favorite on Tabbar */
 const LinksStack = createStackNavigator(
   {
     Links: LinksScreen,
@@ -51,15 +53,15 @@ LinksStack.navigationOptions = {
 
 LinksStack.path = '';
 
-///
+/* Deal on Tabbar */
 const DealStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Deal: LinksScreen,
   },
   config
 );
 
-LinksStack.navigationOptions = {
+DealStack.navigationOptions = {
   tabBarLabel: 'Deal',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
@@ -67,8 +69,8 @@ LinksStack.navigationOptions = {
 };
 
 DealStack.path = '';
-///
 
+/* Setting on Tabbar */
 const SettingsStack = createStackNavigator(
   {
     Settings: SettingsScreen,
