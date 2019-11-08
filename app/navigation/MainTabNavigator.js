@@ -43,13 +43,31 @@ const LinksStack = createStackNavigator(
 );
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+  tabBarLabel: 'Favorite',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
   ),
 };
 
 LinksStack.path = '';
+
+///
+const DealStack = createStackNavigator(
+  {
+    Links: LinksScreen,
+  },
+  config
+);
+
+LinksStack.navigationOptions = {
+  tabBarLabel: 'Deal',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+  ),
+};
+
+DealStack.path = '';
+///
 
 const SettingsStack = createStackNavigator(
   {
@@ -70,6 +88,7 @@ SettingsStack.path = '';
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
+  DealStack,
   SettingsStack,
 });
 
