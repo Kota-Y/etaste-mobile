@@ -21,7 +21,7 @@ const HomeStack = createStackNavigator(
 );
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: true,
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -46,7 +46,7 @@ const LinksStack = createStackNavigator(
 );
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Favorite',
+  tabBarLabel: true,
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused}
       name={'ios-heart'} />
@@ -64,7 +64,7 @@ const DealStack = createStackNavigator(
 );
 
 DealStack.navigationOptions = {
-  tabBarLabel: 'Deal',
+  tabBarLabel: true,
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={'ios-list-box'} />
   ),
@@ -81,7 +81,7 @@ const SettingsStack = createStackNavigator(
 );
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+  tabBarLabel: true,
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={'ios-settings'} />
   ),
