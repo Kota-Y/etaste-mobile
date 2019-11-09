@@ -3,7 +3,7 @@ import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import {
-  Platform, StatusBar, StyleSheet, View,
+  Platform, StatusBar, StyleSheet, View, Image
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -24,6 +24,7 @@ export default function App(props) {
   return (
     <View style={styles.container}>
       {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+      {/* <Image source={require('./assets/images/login.png')} /> */}
       <AppNavigator />
     </View>
   );
