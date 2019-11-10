@@ -13,12 +13,12 @@ export default function HomeScreen() {
   );
 }
 
+//ここでナビゲーションバーを設定
 HomeScreen.navigationOptions = {
   title:'ホーム',
   headerRight: <Icon name="human-child" 
                      size={40} 
-                     color={Colors.etasteColor}
-                     
+                     color={Colors.etasteColor}     
                 />
 }
 
