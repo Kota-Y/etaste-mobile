@@ -1,6 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { StyleSheet, Text, View } from 'react-native';
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+
+import Colors from '../constants/Colors';
 
 export default function HomeScreen() {
   return (
@@ -12,7 +14,12 @@ export default function HomeScreen() {
 }
 
 HomeScreen.navigationOptions = {
-  title:'ホーム'
+  title:'ホーム',
+  headerRight: <Icon name="human-child" 
+                     size={40} 
+                     color={Colors.etasteColor}
+                     
+                />
 }
 
 const styles = StyleSheet.create({
@@ -22,7 +29,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  icon:{
-    margin: 30
-  }
 });
