@@ -1,62 +1,76 @@
 import React from 'react';
-import { View, StyleSheet, Alert, TouchableHighlightComponent } from 'react-native';
-import { Scene, Router, Tabs } from 'react-native-router-flux';
+import { View, StyleSheet, FlatList } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-import HomeScreen from '../screens/HomeScreen';
+import EditProfileScreen from '../screens/EditProfileScreen';
 //import AppNavigator from '../navigation/AppNavigator';
 
 export default function SettingsScreen() {
 
   const list = [
     {
-      title: 'プロフィール編集'
+      title: 'プロフィール編集',
+      id: 1
     },
     {
-      title: 'Q&A'
+      title: 'Q&A', 
+      id: 2
     },
     {
-      title: 'お問い合わせ'
+      title: 'お問い合わせ',
+      id: 3
     },
     {
-      title: 'オープンソース'
+      title: 'オープンソース',
+      id: 4
     },
     {
-      title: '利用規約'
+      title: '利用規約',
+      id: 5
     },
     {
-      title: '特定商品取引法'
+      title: '特定商品取引法',
+      id: 6
     },
     {
-      title: 'プライバシーポリシー'
+      title: 'プライバシーポリシー',
+      id: 7
     },
     {
-      title: 'バージョン情報'
+      title: 'バージョン情報',
+      id: 8
     },
     {
-      title: 'ログアウト'
+      title: 'ログアウト',
+      id: 9
     },
     {
-      title: '大会について'
+      title: '大会について',
+      id: 10
     }
   ]
 
-  //const {navigate} = this.props.navigation;
+  handleItemClick = (item) => {
+    //itemをDetailへ渡す
+    this.props.navigation.navigate('EditProfileScreen', item);
+  }
 
   return(
     <View>
-      {
-        list.map((item, i) => (
-          <ListItem
-            key={i}
-            title={item.title}
-            bottomDivider
-            chevron
-            //onPress={Actions.HomeScreen}
-          />
-        ))
-      }
+      {/* 一覧表示 */}
+      <FlatList
+        data={list}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+            <ListItem
+              title={item.title}
+              bottomDivider
+              chevron
+              onPress={() => this.handleItemClick(item)}
+            />
+        )}
+      />
     </View>
   );
 
@@ -66,11 +80,6 @@ SettingsScreen.navigationOptions = {
   title: '設定',
 };
 
-const SettingNavigator = createStackNavigator({
-  Home: {screen: HomeScreen}
-});
-
-const SetNav = createAppContainer(SettingNavigator);
 
 const styles = StyleSheet.create({
   container: {

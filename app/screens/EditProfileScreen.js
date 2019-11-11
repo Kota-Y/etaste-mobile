@@ -4,7 +4,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 import Colors from '../constants/Colors';
 
-export default function HomeScreen() {
+export default function EditProfileScreen() {
   return (
     <View style={styles.container}>
           <Text>プロフィール編集画面</Text>
@@ -13,7 +13,7 @@ export default function HomeScreen() {
 }
 
 //ここでナビゲーションバーを設定
-HomeScreen.navigationOptions = {
+EditProfileScreen.navigationOptions = {
   title:'プロフィール編集'
 }
 
