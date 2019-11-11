@@ -1,11 +1,54 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { List, ListItem } from 'react-native-elements';
 
 export default function SettingsScreen() {
+
+  const list = [
+    {
+      title: 'プロフィール編集'
+    },
+    {
+      title: 'Q&A'
+    },
+    {
+      title: 'お問い合わせ'
+    },
+    {
+      title: 'オープンソース'
+    },
+    {
+      title: '利用規約'
+    },
+    {
+      title: '特定商品取引法'
+    },
+    {
+      title: 'プライバシーポリシー'
+    },
+    {
+      title: 'バージョン情報'
+    },
+    {
+      title: 'ログアウト'
+    },
+    {
+      title: '大会について'
+    }
+  ]
   
   return(
-    <View style={styles.container}>
-      <Text>ああああ</Text>
+    <View>
+      {
+        list.map((item, i) => (
+          <ListItem
+            key={i}
+            title={item.title}
+            bottomDivider
+            chevron
+          />
+        ))
+      }
     </View>
   );
 
