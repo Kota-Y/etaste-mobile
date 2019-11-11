@@ -27,6 +27,7 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         'ios-home'
+        /* iosとandroidで切り替えるため */
         /* Platform.OS === 'ios'
           ? `ios-information-circle${focused ? '' : '-outline'}`
           : 'md-information-circle' */

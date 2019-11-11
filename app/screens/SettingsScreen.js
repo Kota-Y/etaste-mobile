@@ -1,6 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, Alert } from 'react-native';
+import { View, StyleSheet, Alert, TouchableHighlightComponent } from 'react-native';
+import { Scene, Router, Tabs } from 'react-native-router-flux';
 import { ListItem } from 'react-native-elements';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+
+import HomeScreen from '../screens/HomeScreen';
+//import AppNavigator from '../navigation/AppNavigator';
 
 export default function SettingsScreen() {
 
@@ -36,7 +41,9 @@ export default function SettingsScreen() {
       title: '大会について'
     }
   ]
-  
+
+  //const {navigate} = this.props.navigation;
+
   return(
     <View>
       {
@@ -46,7 +53,7 @@ export default function SettingsScreen() {
             title={item.title}
             bottomDivider
             chevron
-            onPress={() => {Alert.alert('ボタンを押しました！')}}
+            //onPress={Actions.HomeScreen}
           />
         ))
       }
@@ -58,6 +65,12 @@ export default function SettingsScreen() {
 SettingsScreen.navigationOptions = {
   title: '設定',
 };
+
+const SettingNavigator = createStackNavigator({
+  Home: {screen: HomeScreen}
+});
+
+const SetNav = createAppContainer(SettingNavigator);
 
 const styles = StyleSheet.create({
   container: {
