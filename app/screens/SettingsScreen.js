@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { List, ListItem } from 'react-native-elements';
+import { View, StyleSheet, Alert } from 'react-native';
+import { ListItem } from 'react-native-elements';
 
 export default function SettingsScreen() {
 
@@ -46,6 +46,7 @@ export default function SettingsScreen() {
             title={item.title}
             bottomDivider
             chevron
+            onPress={() => {Alert.alert('ボタンを押しました！')}}
           />
         ))
       }
