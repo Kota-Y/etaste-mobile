@@ -1,9 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { ListItem } from 'react-native-elements';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-
-import EditProfileScreen from './EditProfileScreen';
 
 const list = [
   {
@@ -48,7 +45,7 @@ const list = [
   }
 ]
 
-class SettingsScreen extends React.Component {
+export default class SettingsScreen extends React.Component {
 
   render(){
 
@@ -63,7 +60,7 @@ class SettingsScreen extends React.Component {
                 title={item.title}
                 bottomDivider
                 chevron
-                onPress={() => this.props.navigation.navigate('edit')}
+                onPress={() => this.props.navigation.navigate('Edit')}
               />
           )}
         />
@@ -73,33 +70,6 @@ class SettingsScreen extends React.Component {
 
 }
 
-/* SettingsScreen.navigationOptions = {
+SettingsScreen.navigationOptions = {
   title:'設定'
-} */
-
-export default createStackNavigator(
-  {
-    setting: {
-      screen : SettingsScreen, 
-      navigationOptions: {
-        title: '設定',
-        header: null}},
-    edit: {
-      screen: EditProfileScreen, 
-      navigationOptions: {
-        title: '編集',
-        header: null}}
-  },
-  {
-    mode: 'card'
-  }
-)
-/*
-const AppContainer = createAppContainer(RootStack);
-
-
-export default class SettingStack extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
-} */
+}
