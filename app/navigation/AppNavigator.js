@@ -1,19 +1,27 @@
 import React from 'react';
 import { createAppContainer, createSwitchNavigator, createStackNavigator } from 'react-navigation';
 
-import SettingsScreen from '../screens/SettingsScreen';
-import EditProfileScreen from '../screens/EditProfileScreen';
+/* import SettingsScreen from '../screens/SettingsScreen';
+import EditProfileScreen from '../screens/EditProfileScreen'; */
 import MainTabNavigator from './MainTabNavigator';
 
 export default createAppContainer(
-  /* createSwitchNavigator({
-    Main: MainTabNavigator,
+
+  /* createStackNavigator({
+    Setting: SettingsScreen,
+    Edit: EditProfileScreen
   }), */
-  createStackNavigator({
-    list: SettingsScreen,
-    edit: EditProfileScreen
-  },
-  {
-    mode: 'card',
+
+  createSwitchNavigator({
+    Main: MainTabNavigator,
   })
+  
 );
+
+/* const router = createStackNavigator({
+  list: SettingsScreen,
+  edit: EditProfileScreen
+},
+{
+  mode: 'card',
+}) */

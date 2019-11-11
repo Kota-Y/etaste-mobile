@@ -7,7 +7,6 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-//import Router from './navigation/Router';
 import AppNavigator from './navigation/AppNavigator';
 
 export default function App(props) {

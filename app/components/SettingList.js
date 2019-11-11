@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import { ListItem } from 'react-native-elements';
-//import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-import EditProfileScreen from '../screens/EditProfileScreen';
+//import EditProfileScreen from './EditProfileScreen';
 
 const list = [
   {
@@ -43,17 +43,12 @@ const list = [
     id: 9
   },
   {
-    title: '大会について',
+    title: '退会について',
     id: 10
   }
 ]
 
-export default class SettingsScreen extends React.Component {
-
-  /* push = (to) => {
-    const { navigation } = this.props
-    navigation.navigate(to)
-  } */
+export default class SettingList extends React.Component {
 
   render(){
 
@@ -68,7 +63,7 @@ export default class SettingsScreen extends React.Component {
                 title={item.title}
                 bottomDivider
                 chevron
-                onPress={() => this.props.navigation.navigate('editProfile')}
+                onPress={() => this.props.navigation.navigate('Edit')}
               />
           )}
         />
@@ -78,12 +73,25 @@ export default class SettingsScreen extends React.Component {
 
 }
 
+SettingList.navigationOptions = {
+  title:'設定'
+}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+/* const RootStack = createStackNavigator(
+  {
+    setting: SettingsScreen,
+    edit: EditProfileScreen,
   },
-});
+  {
+    mode: 'card'
+  }
+);
+
+const AppContainer = createAppContainer(RootStack);
+
+
+export default class SettingStack extends React.Component {
+  render() {
+    return <AppContainer />;
+  }
+} */

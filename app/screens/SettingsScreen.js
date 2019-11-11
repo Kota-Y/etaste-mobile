@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import { ListItem } from 'react-native-elements';
-//import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
+import EditProfileScreen from './EditProfileScreen';
 
 const list = [
   {
@@ -47,7 +48,7 @@ const list = [
   }
 ]
 
-export default class SettingsScreen extends React.Component {
+class SettingsScreen extends React.Component {
 
   render(){
 
@@ -72,16 +73,33 @@ export default class SettingsScreen extends React.Component {
 
 }
 
-SettingsScreen.navigationOptions = {
-  title:'設定',
-}
+/* SettingsScreen.navigationOptions = {
+  title:'設定'
+} */
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+export default createStackNavigator(
+  {
+    setting: {
+      screen : SettingsScreen, 
+      navigationOptions: {
+        title: '設定',
+        header: null}},
+    edit: {
+      screen: EditProfileScreen, 
+      navigationOptions: {
+        title: '編集',
+        header: null}}
   },
-});
+  {
+    mode: 'card'
+  }
+)
+/*
+const AppContainer = createAppContainer(RootStack);
+
+
+export default class SettingStack extends React.Component {
+  render() {
+    return <AppContainer />;
+  }
+} */
