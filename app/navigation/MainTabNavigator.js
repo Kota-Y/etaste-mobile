@@ -2,6 +2,7 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
+import EditProfileScreen from '../screens/EditProfileScreen';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
@@ -27,6 +28,7 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         'ios-home'
+        /* iosとandroidで切り替えるため */
         /* Platform.OS === 'ios'
           ? `ios-information-circle${focused ? '' : '-outline'}`
           : 'md-information-circle' */
@@ -76,6 +78,7 @@ DealStack.path = '';
 const SettingsStack = createStackNavigator(
   {
     Settings: SettingsScreen,
+    Edit: EditProfileScreen //ここに遷移先を書くと良さげ
   },
   config
 );
